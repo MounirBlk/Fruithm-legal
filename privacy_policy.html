@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Fruithm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .app-name {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .last-updated {
+            background: rgba(255,255,255,0.25);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            display: inline-block;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 500;
+        }
+
+        .privacy-container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(25px);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border-left: 5px solid #0ea5e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro::before {
+            content: "🛡️";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+
+        .intro h3 {
+            color: #0c4a6e;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .intro p {
+            color: #164e63;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .toc {
+            background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border-left: 5px solid #f59e0b;
+            position: relative;
+        }
+
+        .toc::before {
+            content: "📋";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        .toc h3 {
+            color: #92400e;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .toc-item {
+            background: rgba(255,255,255,0.9);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .toc-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .toc-item a {
+            color: #d97706;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            scroll-margin-top: 100px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding: 20px 0;
+            border-bottom: 3px solid #e2e8f0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border-radius: 3px;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, #fafbff 0%, #f1f5f9 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid rgba(79, 172, 254, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .content-card:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-left-color: #4facfe;
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.15);
+        }
+
+        .content-card p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            text-align: justify;
+            color: #334155;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .data-list li {
+            background: rgba(255,255,255,0.8);
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 3px solid #10b981;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .data-list li:hover {
+            background: rgba(255,255,255,1);
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .data-list li::before {
+            content: "📊 ";
+            margin-right: 8px;
+        }
+
+        .third-party-services {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            padding: 30px;
+            border-radius: 18px;
+            border-left: 5px solid #ef4444;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .third-party-services::before {
+            content: "🔗";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            opacity: 0.8;
+        }
+
+        .third-party-services h4 {
+            color: #dc2626;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .service-links {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .service-links li {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .service-links li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(239, 68, 68, 0.2);
+        }
+
+        .service-links a {
+            display: block;
+            padding: 18px 20px;
+            color: #7c2d12;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .service-links a::after {
+            content: "🔗";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .service-links a:hover {
+            color: #dc2626;
+        }
+
+        .service-links a:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translate(3px, -3px);
+        }
+
+        .disclosure-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .disclosure-list li {
+            background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border-left: 4px solid #f97316;
+            transition: all 0.3s ease;
+        }
+
+        .disclosure-list li:hover {
+            transform: translateX(8px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.2);
+        }
+
+        .disclosure-list li::before {
+            content: "⚖️ ";
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #f59e0b;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .important-notice::before {
+            content: "⚠️";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+        }
+
+        .important-notice p {
+            color: #92400e;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .security-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 30px;
+            border-radius: 18px;
+            border-left: 5px solid #22c55e;
+            position: relative;
+        }
+
+        .security-section::before {
+            content: "🔒";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: "📧";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.8;
+            color: white;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+            justify-content: center;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .contact-section h2::before {
+            display: none;
+        }
+
+        .contact-section p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-email {
+            background: rgba(255,255,255,0.95);
+            padding: 18px 30px;
+            border-radius: 30px;
+            display: inline-block;
+            color: #0369a1;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.95);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .privacy-container {
+                padding: 30px 25px;
+            }
+            
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-links {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation pour les sections */
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Politique de Confidentialité</h1>
+            <div class="app-name">Application Fruithm</div>
+            <div class="last-updated">Mise à jour effective : 1er août 2025</div>
+        </div>
+
+        <div class="privacy-container">
+            <div class="intro">
+                <h3>Votre confidentialité est notre priorité</h3>
+                <p>Cette politique de confidentialité s'applique à l'application Fruithm pour appareils mobiles, créée par Mounir en tant que service financé par la publicité. Ce service est destiné à être utilisé "TEL QUEL".</p>
+            </div>
+
+            <div class="toc">
+                <h3>Navigation Rapide</h3>
+                <div class="toc-grid">
+                    <div class="toc-item">
+                        <a href="#collection">📊 Collecte et Utilisation</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#third-party">🔗 Accès de Tiers</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#opt-out">🚪 Droits de Désinscription</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#retention">📁 Politique de Rétention</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#children">👶 Protection des Enfants</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#security">🔒 Sécurité</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#changes">📝 Modifications</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#consent">✅ Votre Consentement</a>
+                    </div>
+                </div>
+            </div>
+
+            <section id="collection" class="section">
+                <h2><span class="section-icon">📊</span>Collecte et Utilisation des Informations</h2>
+                <div class="content-card">
+                    <p>L'Application collecte des informations lorsque vous la téléchargez et l'utilisez. Ces informations peuvent inclure :</p>
+                    <ul class="data-list">
+                        <li>L'adresse de protocole Internet de votre appareil (adresse IP)</li>
+                        <li>Les pages de l'Application que vous visitez, l'heure et la date de votre visite, le temps passé sur ces pages</li>
+                        <li>Le temps passé sur l'Application</li>
+                        <li>Le système d'exploitation que vous utilisez sur votre appareil mobile</li>
+                    </ul>
+                </div>
+                
+                <div class="important-notice">
+                    <p><strong>Important :</strong> L'Application ne collecte pas d'informations précises sur la localisation de votre appareil mobile.</p>
+                </div>
+
+                <div class="content-card">
+                    <p>Le Fournisseur de Services peut utiliser les informations que vous avez fournies pour vous contacter de temps à autre afin de vous fournir des informations importantes, des avis requis et des promotions marketing.</p>
+                </div>
+
+                <div class="content-card">
+                    <p>Pour une meilleure expérience, lors de l'utilisation de l'Application, le Fournisseur de Services peut vous demander de nous fournir certaines informations personnellement identifiables, y compris mais sans s'y limiter le Pseudonyme. Les informations que le Fournisseur de Services demande seront conservées par eux et utilisées comme décrit dans cette politique de confidentialité.</p>
+                </div>
+            </section>
+
+            <section id="third-party" class="section">
+                <h2><span class="section-icon">🔗</span>Accès de Tiers</h2>
+                <div class="content-card">
+                    <p>Seules des données agrégées et anonymisées sont périodiquement transmises à des services externes pour aider le Fournisseur de Services à améliorer l'Application et leur service. Le Fournisseur de Services peut partager vos informations avec des tiers de la manière décrite dans cette déclaration de confidentialité.</p>
+                </div>
+
+                <div class="third-party-services">
+                    <h4>Services Tiers Utilisés</h4>
+                    <p>Veuillez noter que l'Application utilise des services tiers qui ont leur propre Politique de Confidentialité concernant la gestion des données :</p>
+                    <ul class="service-links">
+                        <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+                        <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <p><strong>Le Fournisseur de Services peut divulguer les Informations Fournies par l'Utilisateur et Collectées Automatiquement :</strong></p>
+                    <ul class="disclosure-list">
+                        <li>Comme requis par la loi, comme pour se conformer à une assignation ou à un processus juridique similaire</li>
+                        <li>Lorsqu'ils croient de bonne foi que la divulgation est nécessaire pour protéger leurs droits, protéger votre sécurité ou celle d'autrui, enquêter sur une fraude, ou répondre à une demande gouvernementale</li>
+                        <li>Avec leurs fournisseurs de services de confiance qui travaillent en leur nom, n'ont pas d'utilisation indépendante des informations que nous leur divulguons, et ont accepté d'adhérer aux règles énoncées dans cette déclaration de confidentialité</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="opt-out" class="section">
+                <h2><span class="section-icon">🚪</span>Droits de Désinscription</h2>
+                <div class="content-card">
+                    <p>Vous pouvez facilement arrêter toute collecte d'informations par l'Application en la désinstallant. Vous pouvez utiliser les processus de désinstallation standard qui peuvent être disponibles dans le cadre de votre appareil mobile ou via le marché d'applications mobiles ou le réseau.</p>
+                </div>
+            </section>
+
+            <section id="retention" class="section">
+                <h2><span class="section-icon">📁</span>Politique de Rétention des Données</h2>
+                <div class="content-card">
+                    <p>Le Fournisseur de Services conservera les données fournies par l'utilisateur aussi longtemps que vous utilisez l'Application et pendant une période raisonnable par la suite. Si vous souhaitez qu'ils suppriment les Données Fournies par l'Utilisateur que vous avez fournies via l'Application, veuillez les contacter à <strong>lucien.mou.pro@gmail.com</strong> et ils répondront dans un délai raisonnable.</p>
+                </div>
+            </section>
+
+            <section id="children" class="section">
+                <h2><span class="section-icon">👶</span>Protection des Enfants</h2>
+                <div class="content-card">
+                    <p>Le Fournisseur de Services n'utilise pas l'Application pour solliciter sciemment des données auprès d'enfants de moins de 13 ans ou pour leur faire du marketing.</p>
+                </div>
+                
+                <div class="important-notice">
+                    <p>L'Application ne s'adresse à personne de moins de 13 ans. Le Fournisseur de Services ne collecte pas sciemment d'informations personnellement identifiables auprès d'enfants de moins de 13 ans. Dans le cas où le Fournisseur de Services découvre qu'un enfant de moins de 13 ans a fourni des informations personnelles, le Fournisseur de Services supprimera immédiatement ces informations de leurs serveurs. Si vous êtes parent ou tuteur et que vous savez que votre enfant nous a fourni des informations personnelles, veuillez contacter le Fournisseur de Services à <strong>lucien.mou.pro@gmail.com</strong> afin qu'ils puissent prendre les mesures nécessaires.</p>
+                </div>
+            </section>
+
+            <section id="security" class="section">
+                <h2><span class="section-icon">🔒</span>Sécurité</h2>
+                <div class="security-section">
+                    <p>Le Fournisseur de Services se préoccupe de la protection de la confidentialité de vos informations. Le Fournisseur de Services fournit des garanties physiques, électroniques et procédurales pour protéger les informations que le Fournisseur de Services traite et maintient.</p>
+                </div>
+            </section>
+
+            <section id="changes" class="section">
+                <h2><span class="section-icon">📝</span>Modifications</h2>
+                <div class="content-card">
+                    <p>Cette Politique de Confidentialité peut être mise à jour de temps à autre pour quelque raison que ce soit. Le Fournisseur de Services vous informera de tout changement à la Politique de Confidentialité en mettant à jour cette page avec la nouvelle Politique de Confidentialité. Il vous est conseillé de consulter régulièrement cette Politique de Confidentialité pour tout changement, car l'utilisation continue est considérée comme une approbation de tous les changements.</p>
+                </div>
+            </section>
+
+            <section id="consent" class="section">
+                <h2><span class="section-icon">✅</span>Votre Consentement</h2>
+                <div class="content-card">
+                    <p>En utilisant l'Application, vous consentez au traitement de vos informations tel qu'énoncé dans cette Politique de Confidentialité maintenant et tel que modifié par nous.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2><span class="section-icon">📞</span>Contactez-nous</h2>
+            <p>Si vous avez des questions concernant la confidentialité lors de l'utilisation de l'Application, ou si vous avez des questions sur les pratiques, veuillez contacter le Fournisseur de Services.</p>
+            <a href="mailto:lucien.mou.pro@gmail.com" class="contact-email">lucien.mou.pro@gmail.com</a>
+        </div>
+
+        <div class="footer">
+            <p>Fruithm game</p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add hover effects to content cards
+        document.querySelectorAll('.content-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        // Add dynamic gradient animation to header
+        let gradientAngle = 135;
+        setInterval(() => {
+            gradientAngle += 0.5;
+            if (gradientAngle > 225) gradientAngle = 135;
+            document.body.style.background = `linear-gradient(${gradientAngle}deg, #4facfe 0%, #00f2fe 100%)`;
+        }, 100);
+
+        // Add typing effect to header
+        const headerText = document.querySelector('.header h1');
+        const originalText = headerText.textContent;
+        headerText.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                headerText.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        // Start typing effect when page loads
+        window.addEventListener('load', () => {
+            setTimeout(typeWriter, 500);
+        });
+
+        // Add parallax effect to header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header');
+            const rate = scrolled * -0.5;
+            header.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Enhanced interactions for service links
+        document.querySelectorAll('.service-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Add floating animation to important notices
+        document.querySelectorAll('.important-notice').forEach(notice => {
+            let floatDirection = 1;
+            let floatAmount = 0;
+            
+            setInterval(() => {
+                floatAmount += floatDirection * 0.5;
+                if (floatAmount > 3 || floatAmount < -3) {
+                    floatDirection *= -1;
+                }
+                notice.style.transform = `translateY(${floatAmount}px)`;
+            }, 50);
+        });
+    </script>
+</body>
+</html>
