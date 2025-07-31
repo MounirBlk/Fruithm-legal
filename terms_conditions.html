@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d'Utilisation - Fruithm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header .app-name {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        .terms-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
+        }
+
+        .toc {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            border-left: 4px solid #667eea;
+        }
+
+        .toc h3 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc h3::before {
+            content: "📋";
+            font-size: 1.2rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .toc-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .toc-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 100px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding: 15px 0;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .section-icon {
+            font-size: 1.3rem;
+            opacity: 0.8;
+        }
+
+        .section p {
+            margin-bottom: 18px;
+            font-size: 1rem;
+            text-align: justify;
+            background: rgba(248, 250, 252, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 3px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .section p:hover {
+            background: rgba(248, 250, 252, 0.9);
+            border-left-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .third-party-services {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #f56565;
+            margin: 20px 0;
+        }
+
+        .third-party-services h4 {
+            color: #c53030;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .third-party-services h4::before {
+            content: "🔗";
+        }
+
+        .service-links {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .service-links li {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-links li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-links a {
+            display: block;
+            padding: 15px;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .service-links a::after {
+            content: "↗";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .service-links a:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translate(3px, -3px);
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #f6ad55;
+            margin: 20px 0;
+        }
+
+        .important-notice::before {
+            content: "⚠️ ";
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #38b2ac;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: #2c7a7b;
+            border: none;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .contact-section h2::before {
+            display: none;
+        }
+
+        .contact-email {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            color: #38b2ac;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(56, 178, 172, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(56, 178, 172, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-container {
+                padding: 25px;
+            }
+            
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Conditions d'Utilisation</h1>
+            <div class="app-name">Application Fruithm</div>
+            <div class="last-updated">Mis à jour le 1er août 2025</div>
+        </div>
+
+        <div class="terms-container">
+            <div class="toc">
+                <h3>Table des Matières</h3>
+                <div class="toc-grid">
+                    <div class="toc-item">
+                        <a href="#acceptance">📝 Acceptation des Conditions</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#intellectual-property">🔒 Propriété Intellectuelle</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#modifications">🔄 Modifications de l'Application</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#data-security">🛡️ Données et Sécurité</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#third-party">🔗 Services Tiers</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#connectivity">📶 Connectivité</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#data-charges">💰 Frais de Données</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#responsibility">⚖️ Responsabilités</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#reliability">🔧 Fiabilité de l'Application</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#updates">📱 Mises à Jour</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#changes">📋 Modifications des Conditions</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#contact">📞 Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <section id="acceptance" class="section">
+                <h2><span class="section-icon">📝</span>Acceptation des Conditions</h2>
+                <p>Ces conditions d'utilisation s'appliquent à l'application Fruithm (ci-après dénommée "Application") pour appareils mobiles, créée par Mounir (ci-après dénommé "Fournisseur de Services") en tant que service financé par la publicité.</p>
+                <p>En téléchargeant ou en utilisant l'Application, vous acceptez automatiquement les conditions suivantes. Il est fortement conseillé de lire attentivement et de comprendre ces conditions avant d'utiliser l'Application. Toute copie non autorisée, modification de l'Application, de toute partie de l'Application ou de nos marques de commerce est strictement interdite. Toute tentative d'extraction du code source de l'Application, de traduction de l'Application dans d'autres langues ou de création de versions dérivées n'est pas autorisée. Toutes les marques de commerce, droits d'auteur, droits de base de données et autres droits de propriété intellectuelle liés à l'Application restent la propriété du Fournisseur de Services.</p>
+            </section>
+
+            <section id="intellectual-property" class="section">
+                <h2><span class="section-icon">🔒</span>Propriété Intellectuelle</h2>
+                <p>Le Fournisseur de Services s'engage à faire en sorte que l'Application soit aussi bénéfique et efficace que possible. À ce titre, il se réserve le droit de modifier l'Application ou de facturer ses services à tout moment et pour toute raison. Le Fournisseur de Services vous assure que tous les frais pour l'Application ou ses services vous seront clairement communiqués.</p>
+            </section>
+
+            <section id="modifications" class="section">
+                <h2><span class="section-icon">🔄</span>Modifications de l'Application</h2>
+                <p>L'Application stocke et traite les données personnelles que vous avez fournies au Fournisseur de Services afin de fournir le Service. Il est de votre responsabilité de maintenir la sécurité de votre téléphone et l'accès à l'Application.</p>
+                <div class="important-notice">
+                    Le Fournisseur de Services déconseille fortement le jailbreaking ou le rooting de votre téléphone, ce qui implique la suppression des restrictions logicielles et des limitations imposées par le système d'exploitation officiel de votre appareil. De telles actions pourraient exposer votre téléphone aux logiciels malveillants, virus, programmes malveillants, compromettre les fonctions de sécurité de votre téléphone et peuvent entraîner un dysfonctionnement partiel ou total de l'Application.
+                </div>
+            </section>
+
+            <section id="data-security" class="section">
+                <h2><span class="section-icon">🛡️</span>Données et Sécurité</h2>
+                <p>L'Application stocke et traite les données personnelles que vous avez fournies au Fournisseur de Services afin de fournir le Service. Il est de votre responsabilité de maintenir la sécurité de votre téléphone et l'accès à l'Application.</p>
+            </section>
+
+            <section id="third-party" class="section">
+                <h2><span class="section-icon">🔗</span>Services Tiers</h2>
+                <div class="third-party-services">
+                    <h4>L'Application utilise des services tiers qui ont leurs propres Conditions d'Utilisation</h4>
+                    <p>Voici les liens vers les Conditions d'Utilisation des fournisseurs de services tiers utilisés par l'Application :</p>
+                    <ul class="service-links">
+                        <li><a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+                        <li><a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener noreferrer">AdMob</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="connectivity" class="section">
+                <h2><span class="section-icon">📶</span>Connectivité</h2>
+                <p>Veuillez noter que le Fournisseur de Services n'assume pas la responsabilité de certains aspects. Certaines fonctions de l'Application nécessitent une connexion Internet active, qui peut être Wi-Fi ou fournie par votre fournisseur de réseau mobile. Le Fournisseur de Services ne peut être tenu responsable si l'Application ne fonctionne pas à pleine capacité en raison d'un manque d'accès au Wi-Fi ou si vous avez épuisé votre allocation de données.</p>
+            </section>
+
+            <section id="data-charges" class="section">
+                <h2><span class="section-icon">💰</span>Frais de Données</h2>
+                <p>Si vous utilisez l'application en dehors d'une zone Wi-Fi, veuillez noter que les conditions d'accord de votre fournisseur de réseau mobile s'appliquent toujours. Par conséquent, vous pouvez encourir des frais de votre fournisseur mobile pour l'utilisation de données pendant la connexion à l'application, ou d'autres frais tiers. En utilisant l'application, vous acceptez la responsabilité de ces frais, y compris les frais de données d'itinérance si vous utilisez l'application en dehors de votre territoire de résidence (région ou pays) sans désactiver l'itinérance des données. Si vous n'êtes pas le payeur de facture pour l'appareil sur lequel vous utilisez l'application, ils supposent que vous avez obtenu la permission du payeur de facture.</p>
+            </section>
+
+            <section id="responsibility" class="section">
+                <h2><span class="section-icon">⚖️</span>Responsabilités</h2>
+                <p>De même, le Fournisseur de Services ne peut pas toujours assumer la responsabilité de votre utilisation de l'application. Par exemple, il est de votre responsabilité de vous assurer que votre appareil reste chargé. Si votre appareil manque de batterie et que vous ne pouvez pas accéder au Service, le Fournisseur de Services ne peut être tenu responsable.</p>
+            </section>
+
+            <section id="reliability" class="section">
+                <h2><span class="section-icon">🔧</span>Fiabilité de l'Application</h2>
+                <p>En termes de responsabilité du Fournisseur de Services pour votre utilisation de l'application, il est important de noter que bien qu'ils s'efforcent de s'assurer qu'elle soit mise à jour et précise en tout temps, ils comptent sur des tiers pour leur fournir des informations afin qu'ils puissent les mettre à votre disposition. Le Fournisseur de Services n'accepte aucune responsabilité pour toute perte, directe ou indirecte, que vous subissez en vous fiant entièrement à cette fonctionnalité de l'application.</p>
+            </section>
+
+            <section id="updates" class="section">
+                <h2><span class="section-icon">📱</span>Mises à Jour</h2>
+                <p>Le Fournisseur de Services peut souhaiter mettre à jour l'application à un moment donné. L'application est actuellement disponible selon les exigences du système d'exploitation (et pour tout système supplémentaire auquel ils décident d'étendre la disponibilité de l'application) peuvent changer, et vous devrez télécharger les mises à jour si vous voulez continuer à utiliser l'application. Le Fournisseur de Services ne garantit pas qu'il mettra toujours à jour l'application pour qu'elle soit pertinente pour vous et/ou compatible avec la version particulière du système d'exploitation installée sur votre appareil. Cependant, vous acceptez de toujours accepter les mises à jour de l'application lorsqu'elles vous sont proposées. Le Fournisseur de Services peut également souhaiter cesser de fournir l'application et peut mettre fin à son utilisation à tout moment sans vous fournir d'avis de résiliation. Sauf indication contraire, lors de toute résiliation, (a) les droits et licences qui vous sont accordés dans ces conditions prendront fin ; (b) vous devez cesser d'utiliser l'application et (si nécessaire) la supprimer de votre appareil.</p>
+            </section>
+
+            <section id="changes" class="section">
+                <h2><span class="section-icon">📋</span>Modifications des Conditions</h2>
+                <p>Le Fournisseur de Services peut périodiquement mettre à jour ses Conditions d'Utilisation. Par conséquent, vous êtes conseillé de consulter cette page régulièrement pour tout changement. Le Fournisseur de Services vous informera de tout changement en publiant les nouvelles Conditions d'Utilisation sur cette page.</p>
+                <p>Ces conditions d'utilisation sont effectives à partir du 1er août 2025.</p>
+            </section>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2><span class="section-icon">📞</span>Contactez-nous</h2>
+            <p>Si vous avez des questions ou des suggestions concernant les Conditions d'Utilisation, n'hésitez pas à contacter le Fournisseur de Services.</p>
+            <a href="mailto:lucien.mou.pro@gmail.com" class="contact-email">lucien.mou.pro@gmail.com</a>
+        </div>
+
+        <div class="footer">
+            Fruithm game</p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
